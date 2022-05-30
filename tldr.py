@@ -6,7 +6,7 @@ from string import punctuation
 punctuation=punctuation + '\n'
 
 def tldr (text, length):
-    nlp = spacy.load('nb_core_news_sm')
+    nlp = spacy.load('nb_core_news_sm-3.3.0')
     doc= nlp(text)
     word_frequencies={}
     for word in doc:
