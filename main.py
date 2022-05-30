@@ -25,7 +25,7 @@ def getPageContent (pageid):
     data = res.json()
     toSummarize = []
     for key in data['items']:
-        if (re.search('text', key)) and not re.search('text_ad', key) and key != 'text-title' and key != 'text-lead':
+        if (re.search('text', key)) and not re.search('text_ad', key) and not re.search('text-heading', key) and key != 'text-lead':
             toSummarize.append(data['items'][key]['text']['value'])
         if (re.search('list-', key)):
             for listitem in data['items'][key]['items']:
